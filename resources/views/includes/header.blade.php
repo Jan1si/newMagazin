@@ -4,7 +4,7 @@
       <div class="close">
         <div class="line__close"></div>
       </div>
-      <form class="form__auth" action="" method="post">
+      <form class="form__auth" action="{{ route('login') }}" method="post">
           @csrf
         <div class="input__group">
           <label for="login">Логин</label>
@@ -31,20 +31,29 @@
         <div class="input__group">
           <label for="login">Имя</label>
           <input type="text" name="name">
+            @error('name')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="input__group">
           <label for="login">Логин</label>
           <input type="text" name="login">
+            @error('login')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="input__group">
           <label for="password">Пароль</label>
           <input type="password" name="password">
+            @error('password')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="link__form__group">
           <span id="login">Авторизация</span>
         </div>
         <div class="input__group">
-          <input class="auth_btn" type="submit" value="Войти">
+          <input class="auth_btn" type="submit" value="Зарегистрироваться">
         </div>
       </form>
     </div>

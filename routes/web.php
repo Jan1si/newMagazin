@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,9 @@ use App\Http\Controllers\EmailController;
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::post('/post', [EmailController::class, 'index'])->name('email');
 
-Route::post('refister', [AuthController::class, 'registration'])->name('register');
+Route::post('/register', [AuthController::class, 'registration'])->name('register');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('user')->name('profile');
