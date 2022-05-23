@@ -12,5 +12,8 @@ class User extends Authenticatable
 {
     use  HasFactory;
 
+    public function roles(){
+        return $this->belongsTo(Role::class);
+    }
 
 }

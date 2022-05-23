@@ -23,7 +23,7 @@
                  <p>50 000₽</p>
                </div>
                <a href="#" class="add__basket">Добавить в корзину</a>
-              
+
              </div>
              <div class="slide__image">
                <div class="circle">
@@ -121,16 +121,17 @@
          </div>
        </div>
      </div>
+     @if($products && $products->count())
      <div class="content__block">
        <div class="container">
         <h2 class="title__block">Акции</h2>
           <div class="list__product">
-            @foreach($product as $item)
+            @foreach($products as $item)
             <div class="card__product">
               <div class="title__card">
                 <h3>{{ $item->title }}</h3>
               </div>
-              <img src="{{ asset('img/'.$item->image) }}" alt="">
+              <img src="{{ asset('storage/'.$item->image) }}" alt="">
               <div class="price__product">
                 <p>Цена: {{ $item->price }} ₽</p>
               </div>
@@ -139,15 +140,16 @@
               </a>
             </div>
             @endforeach
-      
+
           </div>
-          
+
           <div class="pagination">
-            {{$product->links()}}
+            {{$products->links()}}
           </div>
 
        </div>
      </div>
+    @endif
 @endsection
 
 

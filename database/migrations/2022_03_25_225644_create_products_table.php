@@ -20,6 +20,10 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->timestamps();
         });
+
+        Schema::table('products', function (Blueprint $table){
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
+        });
     }
 
     /**

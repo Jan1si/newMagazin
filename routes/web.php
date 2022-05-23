@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryTableController;
+use App\Http\Controllers\Admin\ProductTableController;
+use App\Http\Controllers\Admin\RoleTableController;
+use App\Http\Controllers\Admin\UserTableController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\MainController;
@@ -26,3 +31,14 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('user')->name('profile');
+
+Route::middleware('admin')->prefix('admin-panel')->group(function (){
+    Route::get('/', [AdminController::class, 'index'])->name('tables');
+
+    Route::resource('table-roles',RoleTableController::class);
+    Route::resource('table-categories',CategoryTableController::class);
+    Route::resource('table-products',ProductTableController::class);
+    Route::resource('table-users',UserTableController::class);
+
+
+});

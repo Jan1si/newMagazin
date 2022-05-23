@@ -95,8 +95,11 @@
           </button>
         </form>
 
-        <a href="#" class="btn__auth">Войти</a>
-
+          @if(Auth::check())
+              <a class="btn__auth" href="{{ route('logout') }}">{{Auth::user()->login}}(Выйти)</a>
+          @else
+            <a href="#" class="btn__auth">Войти</a>
+          @endif
       </div>
     </div>
     <div class="sub__menu">

@@ -967,3 +967,108 @@ input[type="text"]:focus, input[type="password"]:focus {
     font-size: 12px;
     font-style: italic;
 }
+.card_table{
+    width: 320px;
+    height: 250px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+a[data-color='1']{
+    background: -webkit-linear-gradient(90deg, #395492,#0099c0,#3dd5a8);
+    background: linear-gradient(90deg, #395492,#0099c0,#3dd5a8);
+}
+a[data-color='2']{
+    background: -webkit-linear-gradient(90deg, #9f2ef4,#f97d64,#ffcd42);
+    background: linear-gradient(90deg, #9f2ef4,#f97d64,#ffcd42);
+}
+a[data-color='3']{
+    background: -webkit-linear-gradient(90deg, #28a1af,#0085d4,#0853da);
+    background: linear-gradient(90deg, #28a1af,#0085d4,#0853da);
+}
+a[data-color='4']{
+    background: -webkit-linear-gradient(90deg, #ff5cf1,#b38ade,#66ebff);
+    background: linear-gradient(90deg, #ff5cf1,#b38ade,#66ebff);
+}
+
+
+
+.card_table>span{
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+.count-record{
+    font-size: 18px !important;
+    font-weight: 500;
+}
+
+.table{
+    border: 1px solid #eee;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+}
+.table td{
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+.table tbody tr:nth-child(odd){
+    background: #fff;
+}
+.table tbody tr:nth-child(even){
+    background: #F7F7F7;
+}
+
+.edit{
+    color: orange;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.destroy{
+    color: red;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.img_table{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.to_panel,.to_home{
+    text-decoration: none;
+    font-size: 20px;
+    color: #0085d4;
+}
+
+.create{
+    display: block;
+    width: fit-content;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #1fa11f;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
